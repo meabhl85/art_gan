@@ -143,10 +143,10 @@ discriminator_metric_generated = discriminator.train_on_batch(
 discriminator_metric = 0.5 * np.add(discriminator_metric_real, discriminator_metric_generated)
 generator_metric = combined.train_on_batch(noise, y_real)
 if epoch % SAVE_FREQ == 0:
-   save_images(cnt, fixed_noise)
-   cnt += 1
+    save_images(cnt, fixed_noise)
+    cnt += 1
  
-   print(f"{epoch} epoch, Discriminator accuracy: {100*  discriminator_metric[1]}, Generator accuracy: {100 * generator_metric[1]}")
+    print(f"{epoch} epoch, Discriminator accuracy: {100*  discriminator_metric[1]}, Generator accuracy: {100 * generator_metric[1]}")
 
 ##
 
@@ -183,12 +183,12 @@ for epoch in range(EPOCHS):
 
     discriminator_metric = 0.5 * np.add(discriminator_metric_real,   discriminator_metric_generated)
 
-    generator_metric = combined.train_on_batch(noisse, y_real)
+    generator_metric = combined.train_on_batch(noise, y_real)
     if epoch % SAVE_FREQ == 0:
      save_images(cnt, fixed_noise)
      cnt += 1
  
-     print(f”{epoch} epoch, Discriminator accuracy: {100*  discriminator_metric[1]}, Generator accuracy: {100 * generator_metric[1]}”)
+     print(f"{epoch} epoch, Discriminator accuracy: {100*  discriminator_metric[1]}, Generator accuracy: {100 * generator_metric[1]}")
 
     discriminator_metric_real = discriminator.train_on_batch(x_real, y_real)
     discriminator_metric_generated = discriminator.train_on_batch(x_fake, y_fake)
@@ -199,4 +199,4 @@ for epoch in range(EPOCHS):
         save_images(cnt, fixed_noise)
         cnt += 1
         
-        print(f”{epoch} epoch, Discriminator accuracy: {100* discriminator_metric[1]}, Generator accuracy: {100 * generator_metric[1]}”)
+        print(f"{epoch} epoch, Discriminator accuracy: {100* discriminator_metric[1]}, Generator accuracy: {100 * generator_metric[1]}")
